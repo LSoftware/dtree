@@ -8,6 +8,9 @@ using FriendlySpork.DTree.Model;
 
 namespace FriendlySpork.DTree
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class Engine
     {
         public Engine()
