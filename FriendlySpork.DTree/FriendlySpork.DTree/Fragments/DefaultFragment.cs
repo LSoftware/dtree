@@ -20,6 +20,11 @@ namespace FriendlySpork.DTree.Fragments
             return true;
         }
 
+        public IComparable GetResult(IModel m)
+        {
+            return TrueResult;
+        }
+
         public override bool Validate()
         {
             return true;

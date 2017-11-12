@@ -43,6 +43,8 @@
     <Compile Include="Fragments\AbstractFragment.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Fragments\AndFragment.cs" />
+    <Compile Include="Fragments\BinaryResultFragment.cs" />
+    <Compile Include="Fragments\ConjunctionFragment.cs" />
     <Compile Include="Fragments\DefaultFragment.cs" />
     <Compile Include="Fragments\EqualFragment.cs" />
     <Compile Include="Fragments\ExistsFragment.cs" />
@@ -52,6 +54,7 @@
     <Compile Include="Fragments\InFragment.cs" />
     <Compile Include="Fragments\IResultFragment.cs" />
     <Compile Include="Fragments\IRule.cs" />
+    <Compile Include="Fragments\LeafResultFragment.cs" />
     <Compile Include="Fragments\LessEqualFragment.cs" />
     <Compile Include="Fragments\LessFragment.cs" />
     <Compile Include="Fragments\NotEqualFragment.cs" />
@@ -60,7 +63,8 @@
     <Compile Include="Fragments\ReferenceFragment.cs" />
     <Compile Include="Fragments\ResolveFragment.cs" />
     <Compile Include="Fragments\ExclusiveOrFragment.cs" />
-    <Compile Include="Fragments\ValueFragment.cs" />
+    <Compile Include="Fragments\UnaryResultFragment.cs" />
+    <Compile Include="Fragments\LiteralFragment.cs" />
     <Compile Include="Model\IModel.cs" />
     <Compile Include="Model\Result.cs" />
     <Compile Include="Model\ResultType.cs" />

@@ -7,11 +7,12 @@ using FriendlySpork.DTree.Model;
 
 namespace FriendlySpork.DTree.Fragments
 {
-    class NotFragment : ConjunctionFragment
+    class LiteralFragment : LeafResultFragment
     {
-        public override bool Evaluate(IModel m)
+        IComparable Literal { get; set; }
+        public override IComparable GetResult(IModel m)
         {
-            return !Children[0].Evaluate(m);
+            return Literal;
         }
     }
 }

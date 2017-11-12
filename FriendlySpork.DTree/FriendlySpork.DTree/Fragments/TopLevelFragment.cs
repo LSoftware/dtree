@@ -9,7 +9,7 @@ namespace FriendlySpork.DTree.Fragments
 {
     class TopLevelFragment : AbstractFragment, IRule, IResultFragment
     {
-        public IComparable TrueResult { get; set; }
+        
         
 
         public string Name { get; set; }
@@ -22,19 +22,19 @@ namespace FriendlySpork.DTree.Fragments
 
         public override bool Evaluate(IModel m)
         {
-           IResultFragment first = Children.First(x => x.Evaluate(m)) as IResultFragment;
-           if(first != null)
-            {
-                TrueResult = first.TrueResult;
-            }
-            return first != null;
+            return Children[1].Evaluate(m);
 
+        }
+
+        public IComparable GetResult(IModel m)
+        {
+            var c = Children[0] as IResultFragment;
+            return c.GetResult(m);
         }
 
         public override bool Validate()
         {
-            return Children.All(x => x is IResultFragment && x.Validate());
-            
+            return Children.Count == 2 && Children[0] is IResultFragment &&  (!(Children[1] is IResultFragment)) && Children.All(x=> x.Validate());            
         }
     }
 }

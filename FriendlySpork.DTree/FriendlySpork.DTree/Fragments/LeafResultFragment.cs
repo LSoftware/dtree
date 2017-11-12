@@ -7,17 +7,19 @@ using FriendlySpork.DTree.Model;
 
 namespace FriendlySpork.DTree.Fragments
 {
-    class EqualFragment : BinaryResultFragment
+    abstract class LeafResultFragment : AbstractFragment, IResultFragment
     {
         public override bool Evaluate(IModel m)
         {
-            
-            IComparable a = LeftHandSide.GetResult(m);
-            IComparable b = RightHandSide.GetResult(m);
-            return a.CompareTo(b) == 0;
-
+            return true;
         }
 
+        public abstract IComparable GetResult(IModel m);
         
+
+        public override bool Validate()
+        {
+            return Children.Count == 0;
+        }
     }
 }
